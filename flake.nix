@@ -33,6 +33,7 @@
 
             nativeBuildInputs = with pkgs; [
               cmake
+              libsForQt5.qt5.wrapQtAppsHook
               libsForQt5.qt5.qttools
               pkg-config
             ];
@@ -52,16 +53,9 @@
               libsoundio
               libvorbis
               portaudio
-              libsForQt5.qt5.qtBase
+              libsForQt5.qt5.qtbase
               libsForQt5.qt5.qtx11extras
               SDL2 # TODO: switch to SDL2 in the next version
-            ];
-
-            patches = [
-              (pkgs.fetchpatch {
-                url = "https://raw.githubusercontent.com/archlinux/svntogit-community/cf64acc45e3264c6923885867e2dbf8b7586a36b/trunk/lmms-carla-export.patch";
-                sha256 = "sha256-wlSewo93DYBN2PvrcV58dC9kpoo9Y587eCeya5OX+j4=";
-              })
             ];
 
             cmakeFlags = ["-DWANT_QT5=ON"];
