@@ -33,7 +33,7 @@
 
             nativeBuildInputs = with pkgs; [
               cmake
-              kdePackages.qttools
+              libsForQt5.qt5.qttools
               pkg-config
             ];
 
