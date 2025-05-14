@@ -52,7 +52,7 @@
               libsoundio
               libvorbis
               portaudio
-              kdePackages.qtbase
+              libsForQt5.qt5.qtBase
               libsForQt5.qt5.qtx11extras
               SDL2 # TODO: switch to SDL2 in the next version
             ];
