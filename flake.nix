@@ -45,7 +45,6 @@
               fltk13
               fluidsynth
               lame
-              libgig
               libjack2
               libpulseaudio
               libsamplerate
