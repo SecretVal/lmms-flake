@@ -52,6 +52,7 @@
               libsndfile
               libsoundio
               libvorbis
+              libgig
               portaudio
               libsForQt5.qt5.qtbase
               libsForQt5.qt5.qtx11extras
