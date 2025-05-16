@@ -39,28 +39,28 @@
             ];
 
             buildInputs = with pkgs; [
-              wine
-              carla
-              alsa-lib
-              fftwFloat
-              fltk13
-              fluidsynth
-              lame
-              libjack2
-              libpulseaudio
-              libsamplerate
-              libsndfile
-              libsoundio
-              libvorbis
-              libgig
-              libogg
-              portaudio
               libsForQt5.qt5.qtbase
               libsForQt5.qt5.qtx11extras
-              SDL2 # TODO: switch to SDL2 in the next version
-            ];
+              libsamplerate
+              libsndfile
+              libvorbis
+              libogg
+              wine
+              # libstk
+              fluidsynth
+              fltk13
+              libjack2
+              SDL2
+              alsa-lib
+              portaudio
+              libsoundio
 
-            cmakeFlags = ["-DWANT_QT5=ON"];
+              carla
+              fftwFloat
+              lame
+              libpulseaudio
+              libgig
+            ];
 
             meta = with lib; {
               description = "DAW similar to FL Studio (music production software)";
