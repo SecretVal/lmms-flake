@@ -39,6 +39,7 @@
             ];
 
             buildInputs = with pkgs; [
+              wine
               carla
               alsa-lib
               fftwFloat
@@ -52,6 +53,7 @@
               libsoundio
               libvorbis
               libgig
+              libogg
               portaudio
               libsForQt5.qt5.qtbase
               libsForQt5.qt5.qtx11extras
