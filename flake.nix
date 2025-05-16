@@ -18,7 +18,37 @@
         system,
         ...
       }: {
-        packages = {
+          packages = 
+            let deps = with pkgs; [
+              libsForQt5.qt5.qtbase
+              libsForQt5.qt5.qtx11extras
+              libsamplerate
+              libsndfile
+              libvorbis
+              libogg
+              wine
+              fluidsynth
+              fltk13
+              libjack2
+              SDL2
+              alsa-lib
+              portaudio
+              libsoundio
+              suil
+              lv2
+              lilv
+
+              carla
+              fftwFloat
+              lame
+              libpulseaudio
+              libgig
+              perl
+              perlPackages.libxml_perl
+                perlPackages.ListMoreUtils
+                ladspa-sdk
+            ];in
+              {
           default = pkgs.stdenv.mkDerivation {
             pname = "lmms";
             version = "nightly";
@@ -31,36 +61,14 @@
               fetchSubmodules = true;
             };
 
-            nativeBuildInputs = with pkgs; [
+            nativeBuildInputs = deps ++ (with pkgs;[
               cmake
               libsForQt5.qt5.wrapQtAppsHook
               libsForQt5.qt5.qttools
               pkg-config
-            ];
+            ]);
 
-            buildInputs = with pkgs; [
-              libsForQt5.qt5.qtbase
-              libsForQt5.qt5.qtx11extras
-              libsamplerate
-              libsndfile
-              libvorbis
-              libogg
-              wine
-              # libstk
-              fluidsynth
-              fltk13
-              libjack2
-              SDL2
-              alsa-lib
-              portaudio
-              libsoundio
-
-              carla
-              fftwFloat
-              lame
-              libpulseaudio
-              libgig
-            ];
+            buildInputs = deps;
 
             meta = with lib; {
               description = "DAW similar to FL Studio (music production software)";
